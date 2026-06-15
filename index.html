@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Noto Sans Thai",sans-serif;
+}
+
+body{
+    height:100vh;
+    background:linear-gradient(180deg,#ffd6e7,#ffeef5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+.card{
+    background:rgba(255,255,255,.8);
+    backdrop-filter:blur(20px);
+    border-radius:30px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    width:340px;
+}
+
+.cat{
+    font-size:120px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cat:hover{
+    transform:scale(1.08);
+}
+
+h2{
+    margin-top:10px;
+    color:#444;
+    font-weight:600;
+}
+
+.hidden{
+    display:none;
+}
+
+.letter{
+    margin-top:20px;
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+.letter:hover{
+    transform:translateY(-5px);
+}
+
+.message{
+    font-size:42px;
+    color:#ff6b9a;
+    margin:20px 0;
+    font-weight:700;
+}
+
+.heart{
+    font-size:70px;
+    cursor:pointer;
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+.support{
+    margin-top:20px;
+    padding:20px;
+    border-radius:20px;
+    background:white;
+    color:#555;
+    line-height:1.8;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    animation:fade .8s;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div id="catSection">
+            <div class="cat" onclick="showLetter()">🐱</div>
+            <h2>แตะเจ้าเหมียวสิ ✨</h2>
+        </div>
+
+        <div id="letterSection" class="hidden">
+            <div class="letter" onclick="openLetter()">
+                💌 เปิดจดหมาย
+            </div>
+        </div>
+
+        <div id="messageSection" class="hidden">
+            <div class="message">คิดถึง ❤️</div>
+            <div class="heart" onclick="showSupport()">💖</div>
+            <p>แตะหัวใจนะ</p>
+        </div>
+
+        <div id="supportSection" class="hidden">
+            <div class="support">
+                🌷 ตะเอ๋ คนเก่งของหนู<br><br> 
+
+                ตื่นมาอ่านจดหมายนี้แล้วรึยังน้าา??<br> 
+                ขอบคุณที่เข้ามาอ่านนะงับหนูตั้งใจทำมากๆ 💕<br><br> 
+
+                ไม่รู้พี่จะชอบมั้ยแต่ แวะมาให้กำลังใจก่อนหนูออกไปทำงาน<br> 
+                ตื่นแล้วอย่าลืมหาไรกิน ถ้าต้องลงไปช่วยแม่ก็สู้ๆนะค้าบ<br> 
+                กลับขึ้้นมาถ้าหนูยังไม่กลับพี่นอนพักได้เลยนะ<br><br> 
+
+                ถ้าเหนื่อยหรือคิดมากอะไรมากอดหนูได้ตลอดแต่อย่าลืมว่า...<br> 
+                มีหนูคอยเป็นกำลังใจให้พี่อยู่ตรงนี้เสมอน้าา ❤️ 
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function showLetter(){
+    document.getElementById("catSection").classList.add("hidden");
+    document.getElementById("letterSection").classList.remove("hidden");
+}
+
+function openLetter(){
+    document.getElementById("letterSection").classList.add("hidden");
+    document.getElementById("messageSection").classList.remove("hidden");
+}
+
+function showSupport(){
+    document.getElementById("supportSection").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
